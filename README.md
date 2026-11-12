@@ -13,7 +13,7 @@ The project uses two separate components:
 
 **IMPORTANT: THE WINDOWS COMPANION APPLICATION IS REQUIRED FOR BOTH AI PROVIDERS TO FUNCTION.**
 
-The companion can now be downloaded and installed directly through Minecraft with the player's permission. Manual installation remains available.
+Download the companion from [GitHub Releases](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases), extract the ZIP, and run the included `Start Mikasa Bridge.cmd` file before connecting it to Minecraft.
 
 ## Available AI Providers
 
@@ -45,7 +45,6 @@ Groq allows players to connect Mikasa to AI using their own Groq account and API
 **Advantages:**
 - Free-tier access.
 
-
 **Disadvantages:**
 - Stricter token and usage limits.
 - Occasional rate-limit and structured-response errors.
@@ -67,7 +66,7 @@ The selected provider can be changed without separating or deleting Mikasa's exi
 - Multilingual dialogue and progressive subtitles.
 - Optional Fish Audio voice synthesis and local Whisper speech recognition.
 - Experimental procedural body language and dynamic gestures.
-- Automatic Windows companion installation, startup, and assisted updates.
+- Separate Windows companion installed and launched manually using the included `.cmd` file.
 - AI communication and token-usage optimizations.
 
 Some features remain experimental and may behave inconsistently.
@@ -104,113 +103,63 @@ Achieving truly flexible, context-aware body movement is an ongoing experiment. 
 
 | Component | Version |
 |---|---|
-| Minecraft Mod | 1.44.2-dev |
-| Windows Companion | 0.24.0-dev |
+| Minecraft Mod | 1.46.0-dev |
+| Windows Companion | 0.25.0-dev |
 | Minecraft | Java Edition 1.21.1 |
 | Mod Loader | Fabric |
 | Procedural Body Contract | v13 |
 
-**Official Downloads:**
+**Downloads:**
 
 - [Minecraft Mod — CurseForge](https://www.curseforge.com/minecraft/mc-mods/mikasa-bridge)
-- [Windows Companion — Latest Release](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases/latest)
-- [All GitHub Releases](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases)
+- [Mikasa Bridge Companion (Windows) — GitHub Releases](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases)
 
-The `-dev` suffix reflects the experimental development status of the project, even when a build is publicly released.
+The `-dev` suffix reflects the experimental development status of the project. The versions shown above describe development builds; public downloads may not yet include those exact versions.
 
-Always check the available release and compatibility information before installing.
-
-### Update Manifest
-
-The [Mikasa Bridge Update Manifest](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases/tag/bridge-manifest) contains signed information used by the Minecraft mod to locate and verify companion downloads.
-
-These manifest files are intended for the automatic installation and update system. Players do not need to download them manually.
+**Check the release notes and mod/companion compatibility before installing.**
 
 ## Requirements
 
-### Minecraft and Dependencies
+1. [Minecraft Java Edition 1.21.1](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc)
+2. [Fabric Loader](https://fabricmc.net/use/installer/)
+3. [Java 21](https://adoptium.net/temurin/releases/?version=21)
+4. [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
+5. [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/geckolib)
+6. [Mikasa Bridge Companion (Windows)](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases)
 
-- Minecraft Java Edition 1.21.1.
-- Fabric Loader.
-- Fabric API 0.116.17 or a newer compatible version.
-- GeckoLib 4.9.3 or a newer compatible version.
-- Java 21.
-- Windows 10 or 11 (64-bit) for the companion application.
-- Internet connection for AI-powered conversations.
+**System requirements:** Windows 10 or 11 (64-bit) for the companion, plus an internet connection for AI-powered conversations.
 
-### AI Provider
+**AI provider:** Choose ChatGPT or Groq. Account and sign-in details are explained in [Available AI Providers](#available-ai-providers).
 
-Choose one:
+The Windows companion is required for both AI providers. Its package includes its own Node.js runtime; you do not need to install Node.js or PNPM separately.
 
-- **ChatGPT:** An eligible Plus or Pro subscription.
-- **Groq:** A Groq account and API key, with free-tier access available.
-
-### Windows Companion
-
-**Mikasa Bridge Windows is indispensable for both ChatGPT and Groq to function with the Minecraft mod.**
-
-The companion application is separate from the Minecraft JAR. It can be installed through the in-game setup system or downloaded manually.
-
-The Windows package includes its own Node.js runtime. Players do not need to install Node.js or PNPM separately.
-
-### Optional Features
-
-- **Fish Audio:** Account and API key for Mikasa's synthesized voice.
-- **Whisper:** Local speech recognition for microphone input. A one-time model download is required.
-- **Microphone:** Needed only for voice input.
-
-Voice synthesis and speech recognition are optional. Text conversations work without either service.
+Voice synthesis through Fish Audio and local Whisper speech recognition are optional features. Text conversations do not require them.
 
 ## Installation
 
-### Option 1 — Automatic Installation (Recommended)
+1. Install the Mikasa Bridge mod JAR, Fabric API, and GeckoLib in your Minecraft `mods` folder.
+2. Download the [Mikasa Bridge Companion (Windows)](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases) ZIP from GitHub Releases. Choose a version compatible with your mod.
+3. Extract the entire ZIP to a folder of your choice.
+4. Open the extracted folder and run `Start Mikasa Bridge.cmd` to launch the Windows companion.
+5. Launch Minecraft 1.21.1 with Fabric Loader.
+6. Open the Mikasa Bridge setup screen and connect to the running companion.
+7. Choose your AI provider: ChatGPT or Groq.
+8. Sign in with ChatGPT or configure your Groq API key.
+9. Find Mikasa in your Minecraft world and start interacting with her.
 
-Starting with the latest versions, Minecraft can guide players through installing the separate Windows companion application.
+**Windows Security:** If Windows blocks the downloaded ZIP, verify that it came from the [official GitHub repository](https://github.com/tvalde906-ctrl/Mikasa-Bridge). Then right-click the ZIP, select **Properties**, check **Unblock** (if available), click **Apply**, and extract it again.
 
-1. Install Minecraft 1.21.1 with Fabric Loader.
-2. Install Fabric API and GeckoLib.
-3. Download the Mikasa Bridge mod from CurseForge.
-4. Place the mod JAR in your Minecraft `mods` folder.
-5. Launch Minecraft.
-6. Open the Mikasa Bridge setup screen.
-7. Select the companion installation option and review the download information.
-8. Authorize the download and installation.
-9. Choose ChatGPT or Groq and configure your account.
-10. Find Mikasa in your Minecraft world and start interacting with her.
+**Important:** The companion must remain running for AI-powered features to work.
 
-The installer downloads the official Windows companion from GitHub and verifies the package before installation.
+For additional setup details, consult the `README.txt` included with the companion package.
 
-With the player's permission, Minecraft can also launch the managed companion application and assist with compatible updates.
+### Updating the Windows Companion
 
-Existing accounts, memories, and settings are stored separately from the managed application files and are preserved during updates.
+1. Close the currently running companion.
+2. Download a newer compatible Windows ZIP from [GitHub Releases](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases).
+3. Extract it to a separate folder and launch its `Start Mikasa Bridge.cmd` file.
 
-**The companion is not embedded inside the Minecraft JAR. Minecraft downloads it separately from the official repository.**
-
-### Option 2 — Manual Installation
-
-Players who prefer manual installation can still manage the Windows companion themselves.
-
-1. Install the Minecraft mod and its required dependencies.
-2. Visit [Mikasa Bridge — Latest Release](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases/latest).
-3. Download the Windows companion ZIP.
-4. Extract the complete ZIP into a separate folder.
-5. Launch `Start Mikasa Bridge.cmd`.
-6. Choose ChatGPT or Groq and complete the corresponding setup.
-7. Launch Minecraft and interact with Mikasa.
-
-If Windows flags the downloaded file, verify that it came from the official repository before taking any action. Keep Windows security protections enabled.
-
-The Windows companion must remain running for AI-powered features to work.
-
-### Automatic Update Checks
-
-When enabled, the Minecraft mod checks GitHub once per game launch for compatible companion information.
-
-The system can offer an installation or update when required. Compatible existing installations are not automatically replaced simply because a newer version is available.
-
-Downloads and installations require player consent.
-
-Automatic update checks can be disabled.
+Account settings and memories are stored separately from the application files. Avoid deleting your saved data when changing application versions.
 
 ## How to Talk to Mikasa
 
@@ -259,7 +208,7 @@ Third-party software, libraries, and modifications retain their respective licen
 
 **Modpack Inclusion:** Mikasa Bridge may be included in CurseForge modpacks through the official CurseForge manifest system, provided the original mod files remain unmodified.
 
-This permission does not authorize modification or separate redistribution of the mod's files. The Windows companion is not covered by this permission and must be obtained independently through the official installation system or releases.
+This permission does not authorize modification or separate redistribution of the mod's files. The Windows companion is not covered by this permission and must be obtained independently through [GitHub Releases](https://github.com/tvalde906-ctrl/Mikasa-Bridge/releases).
 
 The Windows companion incorporates components from the Sign in with ChatGPT DevKit.
 
